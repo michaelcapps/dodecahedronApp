@@ -41,7 +41,7 @@ const DodecahedronDisplay = () => {
     const cos = Math.cos(angle);
     const sin = Math.sin(angle);
     return [
-      x,
+      -x,
       y * cos - z * sin,
       y * sin + z * cos
     ];
