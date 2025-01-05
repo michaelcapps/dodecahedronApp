@@ -1,26 +1,20 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-interface MenuItem {
+export interface MenuItem {
   label: string;
   path: string;
 }
 
 interface HamburgerMenuProps {
-  items?: MenuItem[];
+  items: MenuItem[];
   onNavigate?: (path: string) => void;
   className?: string;
 }
 
-const defaultMenuItems: MenuItem[] = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Services', path: '/services' },
-  { label: 'Contact', path: '/contact' }
-];
 
-const TopMenu = ({
-  items = defaultMenuItems,
+export const TopMenu = ({
+  items,
   onNavigate,
   className = ''
 }: HamburgerMenuProps): JSX.Element => {

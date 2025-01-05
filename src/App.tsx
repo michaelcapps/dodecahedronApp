@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
-import TopMenu  from './TopMenu';
+import {TopMenu, MenuItem}  from './TopMenu';
 import DodecahedronDisplay from './DodecahedronRotatable';
 
 // Example page components
@@ -9,12 +9,19 @@ const About = () => <div className="p-4">About Page</div>;
 const Services = () => <div className="p-4">Services Page</div>;
 const Contact = () => <div className="p-4">Contact Page</div>;
 
+const menuItems: MenuItem[] = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
+];
+
 // Navigation wrapper component
 const Navigation = () => {
   const navigate = useNavigate();
   
   return (
-    <TopMenu 
+    <TopMenu
+      items={menuItems}
       onNavigate={(path:string) => navigate(path)}
     />
   );
