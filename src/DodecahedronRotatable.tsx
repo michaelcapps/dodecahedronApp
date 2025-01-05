@@ -8,7 +8,7 @@ const DodecahedronDisplay = () => {
   // Constants for the dodecahedron
   const phi = (1 + Math.sqrt(5)) / 2;
   const scale = 100;
-  const rotationSpeed = 0.001;
+  const rotationSpeed = 0.003;
 
   // Base vertices of a regular dodecahedron
   const baseVertices = [
@@ -134,6 +134,12 @@ const DodecahedronDisplay = () => {
   // Sort faces by z-index for proper rendering
   paths.sort((a, b) => b.avgZ - a.avgZ);
 
+  // compute color
+  const maxCoord = Math.sqrt(3*Math.pow(scale,2)); // distance from center to verteces
+  const r = (Math.abs(transformedVertices[0].x)/maxCoord)*255;
+  const g = (Math.abs(transformedVertices[0].y)/maxCoord)*255;
+  const b = (Math.abs(transformedVertices[0].z)/maxCoord)*255;
+
   return (
     <div className="h-screen w-screen bg-black flex items-center justify-center">
       <div className="text-center">
@@ -148,7 +154,7 @@ const DodecahedronDisplay = () => {
               key={i}
               d={path.path}
               fill="none"
-              stroke="red"
+              stroke={`rgb(${r}, ${g}, ${b})`}
               strokeWidth="2"
             />
           ))}
