@@ -2,12 +2,12 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import {TopMenu, MenuItem}  from './TopMenu';
 import DodecahedronDisplay from './DodecahedronRotatable';
+import ContactPage from './ContactPage';
 
 // Example page components
 const Home = () => <DodecahedronDisplay/>;
 const About = () => <div className="p-4">About Page</div>;
-const Services = () => <div className="p-4">Services Page</div>;
-const Contact = () => <div className="p-4">Contact Page</div>;
+const Contact = () => <ContactPage/>;
 
 const menuItems: MenuItem[] = [
   { label: 'Home', path: '/' },
@@ -46,7 +46,6 @@ const Layout = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
