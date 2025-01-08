@@ -34,7 +34,7 @@ export const TopMenu = ({
     <div className={`relative ${className}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+        className="p-2 hover:bg-gray-500 rounded-lg transition-colors"
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -53,13 +53,13 @@ export const TopMenu = ({
           aria-orientation="vertical"
           aria-labelledby="menu-button"
         >
-          <div className="rounded-md bg-white ring-1 ring-black ring-opacity-5">
+          <div className="rounded-md bg-black ring-4 ring-red ring-opacity-50">
             <div className="py-1">
               {items.map((item) => (
                 <button
                   key={item.path}
                   onClick={() => handleNavigation(item.path)}
-                  className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                  className="w-full bg-gray-200 text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                   role="menuitem"
                 >
                   {item.label}

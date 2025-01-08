@@ -141,7 +141,7 @@ const DodecahedronDisplay = () => {
   const b = (Math.abs(transformedVertices[0].z)/maxCoord)*255;
 
   return (
-    <div className="h-screen w-screen bg-black flex items-center justify-center">
+    <div className="h-screen w-screen flex items-center justify-center">
       <div className="text-center">
         <svg 
           width="400" 
